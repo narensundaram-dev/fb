@@ -1,0 +1,5 @@
+*.ipynb
+*.html
+.vscode
+.ipynb_checkpoints
+output.xlsx
