@@ -172,7 +172,7 @@ class FbManager:
         df_unprocessed = df_unprocessed.dropna()
 
         # Saving input file
-        # df_unprocessed.to_excel(self.xlsx_input, index=False)
+        df_unprocessed.to_excel(self.xlsx_input, index=False)
         log.info("Fetched data has been removed in {} file".format(self.xlsx_input))
 
         # Saving output file
