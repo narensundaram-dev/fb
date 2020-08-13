@@ -134,14 +134,14 @@ class FbManager:
 
     def get_info(self, row):
         options = webdriver.ChromeOptions()
-        # options.add_argument('--headless')
+        options.add_argument('--headless')
         log_path = '/dev/null' if sys.platform == "linux" else "NUL"
 
         chrome = webdriver.Chrome(self.settings["driver_path"]["value"], chrome_options=options, service_log_path=log_path)
         chrome.get(row["url"])
         WebDriverWait(
             chrome, self.settings["page_load_timeout"]["value"]
-        ).until(EC.presence_of_element_located((By.ID, "u_0_1g")))
+        ).until(EC.presence_of_element_located((By.ID, "content_container")))
         soup = BeautifulSoup(chrome.page_source, "html.parser")
         chrome.close()
 
