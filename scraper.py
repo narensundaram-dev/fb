@@ -134,7 +134,7 @@ class FbManager:
 
     def get_info(self, row):
         options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
+        # options.add_argument('--headless')
         log_path = '/dev/null' if sys.platform == "linux" else "NUL"
 
         chrome = webdriver.Chrome(self.settings["driver_path"]["value"], chrome_options=options, service_log_path=log_path)
